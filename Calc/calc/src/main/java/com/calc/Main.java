@@ -10,30 +10,33 @@ public class Main {
         double num1, num2, result;
         char sign;
 
-        System.out.println("First number: ");
+        System.out.println("First number:");
         num1 = input.nextInt();
 
-        System.out.println("Number sign (+, -, * or /): ");
+        System.out.println("Number sign (+, -, * or /):");
         sign = input.next().charAt(0);
 
-        System.out.println("Second number: ");
+        System.out.println("Second number:");
         num2 = input.nextInt();
 
-        if(sign == '+'){
-            result = num1 + num2;
-            System.out.println("Result: " + result);
-        }
-         if(sign == '-'){
-            result = num1 - num2;
-            System.out.println("Result: " + result);
-        }
-         if(sign == '*'){
-            result = num1 * num2;
-            System.out.println("Result: " + result);
-        }
-         if(sign == '/'){
-            result = num1 / num2;
-            System.out.println("Result: " + result);
+        switch (sign) {
+            case '+':
+                result = num1 + num2;
+                System.out.println("Result: " + result);
+                break;
+            case '-':
+                result = num1 - num2;
+                System.out.println("Result: " + result);
+                break;
+            case '*':
+                result = num1 - num2;
+                System.out.println("Result: " + result);
+                break;
+            case '/':
+                result = num1 - num2;
+                System.out.println("Result: " + result);
+                break;
+
         }
 
         input.close();
