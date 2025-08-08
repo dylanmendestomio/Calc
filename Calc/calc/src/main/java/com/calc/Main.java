@@ -15,41 +15,48 @@ public class Main {
             System.out.println("Invalid number. Try again: ");
             input.next();
         }
-        num1 = input.nextInt();
+        num1 = input.nextDouble();
 
         System.out.println("Number sign (+, -, * or /): ");
         sign = input.next().charAt(0);
-         while (sign != '+' && sign != '-' && sign != '*' && sign != '/') {
+        while (sign != '+' && sign != '-' && sign != '*' && sign != '/') {
             System.out.println("Invalid sign. Only (+, -, * or /): ");
             sign = input.next().charAt(0);
         }
 
         System.out.println("Second number: ");
-        num2 = input.nextInt();
-
-        if(sign == '^'){
-
-        }else{
-        switch (sign) {
-            case '+':
-                result = num1 + num2;
-                System.out.println("Result: " + result);
-                break;
-            case '-':
-                result = num1 - num2;
-                System.out.println("Result: " + result);
-                break;
-            case '*':
-                result = num1 - num2;
-                System.out.println("Result: " + result);
-                break;
-            case '/':
-                result = num1 - num2;
-                System.out.println("Result: " + result);
-                break;
-
+        while (!input.hasNextDouble()) {
+            System.out.println("Invalid number. Try again: ");
+            input.next();
         }
-    }
+        num2 = input.nextDouble();
+
+        if (sign == '^') {
+
+        } else {
+            switch (sign) {
+                case '+':
+                    result = num1 + num2;
+                    System.out.println("Result: " + result);
+                    break;
+                case '-':
+                    result = num1 - num2;
+                    System.out.println("Result: " + result);
+                    break;
+                case '*':
+                    result = num1 - num2;
+                    System.out.println("Result: " + result);
+                    break;
+                case '/':
+                    if (num2 != 0) {
+                        result = num1 / num2;
+                        System.out.println("Result: " + result);
+                    } else {
+                        System.out.println("Error: Division by zero is not allowed.");
+                    }
+
+            }
+        }
 
         input.close();
     }
